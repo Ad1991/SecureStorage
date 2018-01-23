@@ -13,6 +13,12 @@
 		356C9EC62016EE2100D3428A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 356C9EC52016EE2100D3428A /* Assets.xcassets */; };
 		356C9EC92016EE2100D3428A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356C9EC72016EE2100D3428A /* LaunchScreen.storyboard */; };
 		356C9ED42016EE2100D3428A /* DemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356C9ED32016EE2100D3428A /* DemoAppTests.swift */; };
+		356C9EEE2017205400D3428A /* SecureStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356C9EE52017205400D3428A /* SecureStorage.framework */; };
+		356C9EF52017205400D3428A /* SecureStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356C9EF42017205400D3428A /* SecureStorageTests.swift */; };
+		356C9EF72017205400D3428A /* SecureStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 356C9EE72017205400D3428A /* SecureStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		356C9EFA2017205400D3428A /* SecureStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356C9EE52017205400D3428A /* SecureStorage.framework */; };
+		356C9EFB2017205400D3428A /* SecureStorage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 356C9EE52017205400D3428A /* SecureStorage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		356C9F062017207100D3428A /* DataEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356C9F052017207100D3428A /* DataEncryptor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +29,42 @@
 			remoteGlobalIDString = 356C9EBA2016EE2100D3428A;
 			remoteInfo = DemoApp;
 		};
+		356C9EEF2017205400D3428A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 356C9EB32016EE2100D3428A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 356C9EE42017205400D3428A;
+			remoteInfo = SecureStorage;
+		};
+		356C9EF12017205400D3428A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 356C9EB32016EE2100D3428A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 356C9EBA2016EE2100D3428A;
+			remoteInfo = DemoApp;
+		};
+		356C9EF82017205400D3428A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 356C9EB32016EE2100D3428A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 356C9EE42017205400D3428A;
+			remoteInfo = SecureStorage;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		356C9F012017205400D3428A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				356C9EFB2017205400D3428A /* SecureStorage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		356C9EBB2016EE2100D3428A /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +77,15 @@
 		356C9ECF2016EE2100D3428A /* DemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		356C9ED32016EE2100D3428A /* DemoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppTests.swift; sourceTree = "<group>"; };
 		356C9ED52016EE2100D3428A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356C9EE52017205400D3428A /* SecureStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SecureStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		356C9EE72017205400D3428A /* SecureStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecureStorage.h; sourceTree = "<group>"; };
+		356C9EE82017205400D3428A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356C9EED2017205400D3428A /* SecureStorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecureStorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		356C9EF42017205400D3428A /* SecureStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageTests.swift; sourceTree = "<group>"; };
+		356C9EF62017205400D3428A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356C9F032017207100D3428A /* iphoneos.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphoneos.modulemap; sourceTree = "<group>"; };
+		356C9F042017207100D3428A /* iphonesimulator.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphonesimulator.modulemap; sourceTree = "<group>"; };
+		356C9F052017207100D3428A /* DataEncryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEncryptor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356C9EFA2017205400D3428A /* SecureStorage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +101,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356C9EE12017205400D3428A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356C9EEA2017205400D3428A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				356C9EEE2017205400D3428A /* SecureStorage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +127,8 @@
 			children = (
 				356C9EBD2016EE2100D3428A /* DemoApp */,
 				356C9ED22016EE2100D3428A /* DemoAppTests */,
+				356C9EE62017205400D3428A /* SecureStorage */,
+				356C9EF32017205400D3428A /* SecureStorageTests */,
 				356C9EBC2016EE2100D3428A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +138,8 @@
 			children = (
 				356C9EBB2016EE2100D3428A /* DemoApp.app */,
 				356C9ECF2016EE2100D3428A /* DemoAppTests.xctest */,
+				356C9EE52017205400D3428A /* SecureStorage.framework */,
+				356C9EED2017205400D3428A /* SecureStorageTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +166,39 @@
 			path = DemoAppTests;
 			sourceTree = "<group>";
 		};
+		356C9EE62017205400D3428A /* SecureStorage */ = {
+			isa = PBXGroup;
+			children = (
+				356C9F052017207100D3428A /* DataEncryptor.swift */,
+				356C9F032017207100D3428A /* iphoneos.modulemap */,
+				356C9F042017207100D3428A /* iphonesimulator.modulemap */,
+				356C9EE72017205400D3428A /* SecureStorage.h */,
+				356C9EE82017205400D3428A /* Info.plist */,
+			);
+			path = SecureStorage;
+			sourceTree = "<group>";
+		};
+		356C9EF32017205400D3428A /* SecureStorageTests */ = {
+			isa = PBXGroup;
+			children = (
+				356C9EF42017205400D3428A /* SecureStorageTests.swift */,
+				356C9EF62017205400D3428A /* Info.plist */,
+			);
+			path = SecureStorageTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		356C9EE22017205400D3428A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				356C9EF72017205400D3428A /* SecureStorage.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		356C9EBA2016EE2100D3428A /* DemoApp */ = {
@@ -106,10 +208,12 @@
 				356C9EB72016EE2100D3428A /* Sources */,
 				356C9EB82016EE2100D3428A /* Frameworks */,
 				356C9EB92016EE2100D3428A /* Resources */,
+				356C9F012017205400D3428A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				356C9EF92017205400D3428A /* PBXTargetDependency */,
 			);
 			name = DemoApp;
 			productName = DemoApp;
@@ -134,6 +238,43 @@
 			productReference = 356C9ECF2016EE2100D3428A /* DemoAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		356C9EE42017205400D3428A /* SecureStorage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 356C9F002017205400D3428A /* Build configuration list for PBXNativeTarget "SecureStorage" */;
+			buildPhases = (
+				356C9EE02017205400D3428A /* Sources */,
+				356C9EE12017205400D3428A /* Frameworks */,
+				356C9EE22017205400D3428A /* Headers */,
+				356C9EE32017205400D3428A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SecureStorage;
+			productName = SecureStorage;
+			productReference = 356C9EE52017205400D3428A /* SecureStorage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		356C9EEC2017205400D3428A /* SecureStorageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 356C9F022017205400D3428A /* Build configuration list for PBXNativeTarget "SecureStorageTests" */;
+			buildPhases = (
+				356C9EE92017205400D3428A /* Sources */,
+				356C9EEA2017205400D3428A /* Frameworks */,
+				356C9EEB2017205400D3428A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				356C9EF02017205400D3428A /* PBXTargetDependency */,
+				356C9EF22017205400D3428A /* PBXTargetDependency */,
+			);
+			name = SecureStorageTests;
+			productName = SecureStorageTests;
+			productReference = 356C9EED2017205400D3428A /* SecureStorageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,6 +290,16 @@
 						ProvisioningStyle = Automatic;
 					};
 					356C9ECE2016EE2100D3428A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 356C9EBA2016EE2100D3428A;
+					};
+					356C9EE42017205400D3428A = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					356C9EEC2017205400D3428A = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 356C9EBA2016EE2100D3428A;
@@ -170,6 +321,8 @@
 			targets = (
 				356C9EBA2016EE2100D3428A /* DemoApp */,
 				356C9ECE2016EE2100D3428A /* DemoAppTests */,
+				356C9EE42017205400D3428A /* SecureStorage */,
+				356C9EEC2017205400D3428A /* SecureStorageTests */,
 			);
 		};
 /* End PBXProject section */
@@ -186,6 +339,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		356C9ECD2016EE2100D3428A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356C9EE32017205400D3428A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356C9EEB2017205400D3428A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -212,6 +379,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		356C9EE02017205400D3428A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				356C9F062017207100D3428A /* DataEncryptor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356C9EE92017205400D3428A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				356C9EF52017205400D3428A /* SecureStorageTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -219,6 +402,21 @@
 			isa = PBXTargetDependency;
 			target = 356C9EBA2016EE2100D3428A /* DemoApp */;
 			targetProxy = 356C9ED02016EE2100D3428A /* PBXContainerItemProxy */;
+		};
+		356C9EF02017205400D3428A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 356C9EE42017205400D3428A /* SecureStorage */;
+			targetProxy = 356C9EEF2017205400D3428A /* PBXContainerItemProxy */;
+		};
+		356C9EF22017205400D3428A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 356C9EBA2016EE2100D3428A /* DemoApp */;
+			targetProxy = 356C9EF12017205400D3428A /* PBXContainerItemProxy */;
+		};
+		356C9EF92017205400D3428A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 356C9EE42017205400D3428A /* SecureStorage */;
+			targetProxy = 356C9EF82017205400D3428A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -246,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -303,6 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -352,7 +552,9 @@
 		356C9ED92016EE2100D3428A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -366,7 +568,9 @@
 		356C9EDA2016EE2100D3428A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -409,6 +613,91 @@
 			};
 			name = Release;
 		};
+		356C9EFC2017205400D3428A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SecureStorage/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"MODULEMAP_FILE[sdk=iphoneos*]" = "$(SRCROOT)/SecureStorage/iphoneos.modulemap";
+				"MODULEMAP_FILE[sdk=iphonesimulator*]" = "$(SRCROOT)/SecureStorage/iphonesimulator.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.SecureStorage;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		356C9EFD2017205400D3428A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SecureStorage/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"MODULEMAP_FILE[sdk=iphoneos*]" = "$(SRCROOT)/SecureStorage/iphoneos.modulemap";
+				"MODULEMAP_FILE[sdk=iphonesimulator*]" = "$(SRCROOT)/SecureStorage/iphonesimulator.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.SecureStorage;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		356C9EFE2017205400D3428A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SecureStorageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.SecureStorageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoApp.app/DemoApp";
+			};
+			name = Debug;
+		};
+		356C9EFF2017205400D3428A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SecureStorageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.SecureStorageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoApp.app/DemoApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -435,6 +724,24 @@
 			buildConfigurations = (
 				356C9EDC2016EE2100D3428A /* Debug */,
 				356C9EDD2016EE2100D3428A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		356C9F002017205400D3428A /* Build configuration list for PBXNativeTarget "SecureStorage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				356C9EFC2017205400D3428A /* Debug */,
+				356C9EFD2017205400D3428A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		356C9F022017205400D3428A /* Build configuration list for PBXNativeTarget "SecureStorageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				356C9EFE2017205400D3428A /* Debug */,
+				356C9EFF2017205400D3428A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
