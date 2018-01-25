@@ -19,6 +19,8 @@
 		356C9EFA2017205400D3428A /* SecureStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356C9EE52017205400D3428A /* SecureStorage.framework */; };
 		356C9EFB2017205400D3428A /* SecureStorage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 356C9EE52017205400D3428A /* SecureStorage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		356C9F062017207100D3428A /* DataEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356C9F052017207100D3428A /* DataEncryptor.swift */; };
+		356C9F082019FB2D00D3428A /* SecureStorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356C9F072019FB2D00D3428A /* SecureStorageError.swift */; };
+		356C9F0A2019FEC300D3428A /* SecureKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356C9F092019FEC300D3428A /* SecureKeyGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		356C9F032017207100D3428A /* iphoneos.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphoneos.modulemap; sourceTree = "<group>"; };
 		356C9F042017207100D3428A /* iphonesimulator.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphonesimulator.modulemap; sourceTree = "<group>"; };
 		356C9F052017207100D3428A /* DataEncryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEncryptor.swift; sourceTree = "<group>"; };
+		356C9F072019FB2D00D3428A /* SecureStorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageError.swift; sourceTree = "<group>"; };
+		356C9F092019FEC300D3428A /* SecureKeyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureKeyGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,8 @@
 				356C9F042017207100D3428A /* iphonesimulator.modulemap */,
 				356C9EE72017205400D3428A /* SecureStorage.h */,
 				356C9EE82017205400D3428A /* Info.plist */,
+				356C9F072019FB2D00D3428A /* SecureStorageError.swift */,
+				356C9F092019FEC300D3428A /* SecureKeyGenerator.swift */,
 			);
 			path = SecureStorage;
 			sourceTree = "<group>";
@@ -384,6 +390,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				356C9F062017207100D3428A /* DataEncryptor.swift in Sources */,
+				356C9F082019FB2D00D3428A /* SecureStorageError.swift in Sources */,
+				356C9F0A2019FEC300D3428A /* SecureKeyGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
