@@ -13,7 +13,9 @@ public enum SecureStorageError: CustomNSError {
     case encryptionFailed
     case decryptionFailed
     case keyGenerationFailed
-    case keychainReadWriteFailed
+    case keychainItemNotFound
+    case keychainReadFailed
+    case keychainWriteFailed
     
     
     public var errorCode: Int {

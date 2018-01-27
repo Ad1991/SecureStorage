@@ -21,6 +21,9 @@
 		356C9F062017207100D3428A /* DataEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356C9F052017207100D3428A /* DataEncryptor.swift */; };
 		356C9F082019FB2D00D3428A /* SecureStorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356C9F072019FB2D00D3428A /* SecureStorageError.swift */; };
 		356C9F0A2019FEC300D3428A /* SecureKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356C9F092019FEC300D3428A /* SecureKeyGenerator.swift */; };
+		356C9F0C201C6A1700D3428A /* KeychainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356C9F0B201C6A1700D3428A /* KeychainHandler.swift */; };
+		35C93EB1201C6CBE0029D837 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C93EB0201C6CBE0029D837 /* Constants.swift */; };
+		35C93EB3201C86FC0029D837 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C93EB2201C86FC0029D837 /* SecureStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		356C9F052017207100D3428A /* DataEncryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEncryptor.swift; sourceTree = "<group>"; };
 		356C9F072019FB2D00D3428A /* SecureStorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageError.swift; sourceTree = "<group>"; };
 		356C9F092019FEC300D3428A /* SecureKeyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureKeyGenerator.swift; sourceTree = "<group>"; };
+		356C9F0B201C6A1700D3428A /* KeychainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHandler.swift; sourceTree = "<group>"; };
+		35C93EB0201C6CBE0029D837 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		35C93EB2201C86FC0029D837 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +186,9 @@
 				356C9EE82017205400D3428A /* Info.plist */,
 				356C9F072019FB2D00D3428A /* SecureStorageError.swift */,
 				356C9F092019FEC300D3428A /* SecureKeyGenerator.swift */,
+				356C9F0B201C6A1700D3428A /* KeychainHandler.swift */,
+				35C93EB0201C6CBE0029D837 /* Constants.swift */,
+				35C93EB2201C86FC0029D837 /* SecureStorage.swift */,
 			);
 			path = SecureStorage;
 			sourceTree = "<group>";
@@ -389,8 +398,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35C93EB3201C86FC0029D837 /* SecureStorage.swift in Sources */,
+				35C93EB1201C6CBE0029D837 /* Constants.swift in Sources */,
 				356C9F062017207100D3428A /* DataEncryptor.swift in Sources */,
 				356C9F082019FB2D00D3428A /* SecureStorageError.swift in Sources */,
+				356C9F0C201C6A1700D3428A /* KeychainHandler.swift in Sources */,
 				356C9F0A2019FEC300D3428A /* SecureKeyGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
