@@ -8,6 +8,12 @@
 
 import Foundation
 
+public enum SSStorageType: Int {
+    case defaults
+    case sharedDefaults
+    case file
+}
+
 
 struct Constants {
     

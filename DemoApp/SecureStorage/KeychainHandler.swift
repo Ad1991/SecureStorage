@@ -17,12 +17,8 @@ class KeychainHandler {
     
     
     //MARK:- Public Methods -
-    required public init(accountName: String?, accessGroup: String?, accessControlType: CFString) {
-        if let account = accountName {
-            self.accountName = account
-        } else {
-            self.accountName = Constants.Keychain.defaultAccountName
-        }
+    required public init(accountName: String = Constants.Keychain.defaultAccountName, accessGroup: String?, accessControlType: CFString) {
+        self.accountName = accountName
         self.accessGroup = accessGroup
         self.accessControlType = accessControlType
     }

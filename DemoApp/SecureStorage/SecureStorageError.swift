@@ -10,6 +10,7 @@ import Foundation
 
 
 public enum SecureStorageError: CustomNSError {
+    case initializationFailed
     case encryptionFailed
     case decryptionFailed
     case keyGenerationFailed
