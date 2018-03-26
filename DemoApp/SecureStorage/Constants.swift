@@ -8,17 +8,21 @@
 
 import Foundation
 
-public enum SSStorageType: Int {
-    case defaults
-    case sharedDefaults
-    case file
+public enum SSStorageType {
+    case defaults (UserDefaults)
+    case sharedDefaults (UserDefaults)
+    case file (URL)
 }
 
 
 struct Constants {
     
     struct Keychain {
-        
         static let defaultAccountName: String = "keychainUserAccoutName"
+        static let secureKeyIdentifier: String = "com.personal.securestorage.securekey"
+    }
+    
+    struct ErrorDomain {
+        static let SecureStorage: String = "SecureStorageDomain"
     }
 }

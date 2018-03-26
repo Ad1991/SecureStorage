@@ -16,7 +16,7 @@ class KeychainHandler {
     private let accessControlType: CFString
     
     
-    //MARK:- Public Methods -
+    //MARK:- Initializers -
     required public init(accountName: String = Constants.Keychain.defaultAccountName, accessGroup: String?, accessControlType: CFString) {
         self.accountName = accountName
         self.accessGroup = accessGroup
@@ -24,6 +24,7 @@ class KeychainHandler {
     }
     
     
+    //MARK:- Public Methods -
     public func fetchObject(for key: String) throws -> Data {
         var attributeQuery = queryDictionary(for: key)
         attributeQuery[kSecReturnData as String] = kCFBooleanTrue

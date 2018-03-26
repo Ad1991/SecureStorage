@@ -9,7 +9,7 @@
 import Foundation
 
 
-public enum SecureStorageError: CustomNSError {
+public enum SecureStorageError: Int, CustomNSError {
     case initializationFailed
     case encryptionFailed
     case decryptionFailed
@@ -17,10 +17,15 @@ public enum SecureStorageError: CustomNSError {
     case keychainItemNotFound
     case keychainReadFailed
     case keychainWriteFailed
+    case fileWritingFailed
     
+    
+    public static var errorDomain: String {
+        return Constants.ErrorDomain.SecureStorage
+    }
     
     public var errorCode: Int {
-        return 10
+        return rawValue
     }
     
     public var errorUserInfo: [String : Any] {
