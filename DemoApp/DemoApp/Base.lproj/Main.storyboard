@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qf9-bP-N5b">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,139 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Keychain Sharing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zge-ns-6HW">
+                                <rect key="frame" x="20" y="84" width="264" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="U86-tM-JI5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vma-ZJ-jGz">
+                                <rect key="frame" x="306" y="84" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="qbb-fX-0W0"/>
+                                </constraints>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable App Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36j-yk-YyV">
+                                <rect key="frame" x="20" y="137" width="264" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="DWj-Vx-E99"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5ru-Bw-Qeo">
+                                <rect key="frame" x="306" y="134" width="51" height="31"/>
+                                <connections>
+                                    <action selector="enableAppGroup:" destination="BYZ-38-t0r" eventType="valueChanged" id="eg4-YR-puD"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5b-Y0-Htr">
+                                <rect key="frame" x="123.5" y="281" width="128" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="834-Ue-gPk"/>
+                                    <constraint firstAttribute="width" constant="128" id="Fda-ns-GkX"/>
+                                </constraints>
+                                <state key="normal" title="Launch"/>
+                                <connections>
+                                    <segue destination="GC2-8V-Myl" kind="show" identifier="launchTestScreen" id="V0E-PU-hbc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable File Storage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3a-x9-h3v">
+                                <rect key="frame" x="20" y="190" width="264" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bsq-hF-c3Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bZR-yF-hRq">
+                                <rect key="frame" x="306" y="184" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="BPq-OT-QlA"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="enableFileStorage:" destination="BYZ-38-t0r" eventType="valueChanged" id="zKn-KO-CaR"/>
+                                </connections>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bZR-yF-hRq" firstAttribute="trailing" secondItem="5ru-Bw-Qeo" secondAttribute="trailing" id="0Bc-JI-eiJ"/>
+                            <constraint firstItem="bZR-yF-hRq" firstAttribute="leading" secondItem="5ru-Bw-Qeo" secondAttribute="leading" id="0Yp-uh-k2M"/>
+                            <constraint firstItem="36j-yk-YyV" firstAttribute="trailing" secondItem="zge-ns-6HW" secondAttribute="trailing" id="0uV-ML-JZ7"/>
+                            <constraint firstItem="j3a-x9-h3v" firstAttribute="top" secondItem="36j-yk-YyV" secondAttribute="bottom" constant="32" id="3rR-6L-dAt"/>
+                            <constraint firstItem="36j-yk-YyV" firstAttribute="top" secondItem="zge-ns-6HW" secondAttribute="bottom" constant="32" id="5mP-2B-jsg"/>
+                            <constraint firstItem="j3a-x9-h3v" firstAttribute="trailing" secondItem="36j-yk-YyV" secondAttribute="trailing" id="EsS-Hi-WeI"/>
+                            <constraint firstItem="5ru-Bw-Qeo" firstAttribute="top" secondItem="Vma-ZJ-jGz" secondAttribute="bottom" constant="19" id="LAV-0S-GMl"/>
+                            <constraint firstItem="5ru-Bw-Qeo" firstAttribute="trailing" secondItem="Vma-ZJ-jGz" secondAttribute="trailing" id="Pea-Bd-reE"/>
+                            <constraint firstItem="5ru-Bw-Qeo" firstAttribute="leading" secondItem="Vma-ZJ-jGz" secondAttribute="leading" id="RQb-GI-Xh6"/>
+                            <constraint firstItem="zge-ns-6HW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Tvw-dq-DVD"/>
+                            <constraint firstItem="l5b-Y0-Htr" firstAttribute="top" secondItem="j3a-x9-h3v" secondAttribute="bottom" constant="70" id="eGe-zF-ylf"/>
+                            <constraint firstItem="36j-yk-YyV" firstAttribute="leading" secondItem="zge-ns-6HW" secondAttribute="leading" id="jYR-0D-HuX"/>
+                            <constraint firstItem="j3a-x9-h3v" firstAttribute="leading" secondItem="36j-yk-YyV" secondAttribute="leading" id="jei-ar-kb6"/>
+                            <constraint firstItem="l5b-Y0-Htr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="q4B-XU-eAn"/>
+                            <constraint firstItem="5ru-Bw-Qeo" firstAttribute="height" secondItem="Vma-ZJ-jGz" secondAttribute="height" id="rre-YI-zfm"/>
+                            <constraint firstItem="zge-ns-6HW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="rzk-dM-WjT"/>
+                            <constraint firstItem="Vma-ZJ-jGz" firstAttribute="leading" secondItem="zge-ns-6HW" secondAttribute="trailing" constant="22" id="ugH-Kr-COU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Vma-ZJ-jGz" secondAttribute="top" constant="-20" id="vab-tY-MYC"/>
+                            <constraint firstItem="bZR-yF-hRq" firstAttribute="top" secondItem="5ru-Bw-Qeo" secondAttribute="bottom" constant="19" id="xvC-8N-1QD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vma-ZJ-jGz" secondAttribute="trailing" constant="20" id="zfc-ow-eDb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ys2-Ag-bPX"/>
+                    <connections>
+                        <outlet property="appGroupSwitch" destination="5ru-Bw-Qeo" id="CzF-HB-4jz"/>
+                        <outlet property="fileStorageSwitch" destination="bZR-yF-hRq" id="4Zm-3G-E2h"/>
+                        <outlet property="keychainSharingSwitch" destination="Vma-ZJ-jGz" id="7y6-Xg-seY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="928.79999999999995" y="153.37331334332833"/>
+        </scene>
+        <!--Test Secure Storage View Controller-->
+        <scene sceneID="dmc-4h-z3z">
+            <objects>
+                <viewController id="GC2-8V-Myl" customClass="TestSecureStorageViewController" customModule="DemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iNC-H8-ua5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6k0-rY-Yb2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HSI-fJ-lvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1622" y="151"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D4S-eQ-DpG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qf9-bP-N5b" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q6A-ua-m6Q">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="V1T-z8-2MQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OVO-OD-Ot0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136" y="133.13343328335833"/>
         </scene>
     </scenes>
 </document>
