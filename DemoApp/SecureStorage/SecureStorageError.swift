@@ -17,7 +17,10 @@ public enum SecureStorageError: Int, CustomNSError {
     case keychainItemNotFound
     case keychainReadFailed
     case keychainWriteFailed
+    case fileReadingFailed
     case fileWritingFailed
+    case objectNotFound
+    case unarchivingFailed
     
     
     public static var errorDomain: String {

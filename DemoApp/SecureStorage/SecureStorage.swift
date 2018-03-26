@@ -61,11 +61,49 @@ import Foundation
     
     
     //MARK:- Public methods -
+    
+    
+    /// Store objects with AES256 encryption at specified location/defaults.
+    ///
+    /// - Parameters:
+    ///   - object: Object that will be archived, encrypted and stored
+    ///   - key: Key to which is mapped to the object to be stored
+    /// - Throws: Throws specific error based on which task has failed ex. Keychain access has failed, encryption has failed etc.
     public func store(_ object: Any, for key: String) throws {
         let archivedData = NSKeyedArchiver.archivedData(withRootObject: object)
         let secureAccessKey = try fetchSecureAccessKey()
         let encryptedData = try archivedData.encryptWithAES256(using: secureAccessKey, iv: SecureKeyGenerator.initializationVector(from: secureAccessKey))
         try store(encryptedData, for: key)
+    }
+    
+    
+    /// Retrieve object for specified key, decrypt and unarchive it before returning
+    ///
+    /// - Parameter key: Key for which object is to be retrieved
+    /// - Returns: Object that is to be retrieved for the key.
+    /// - Throws: Throws specific error based on which task has failed ex. Keychain access has failed, decryption has failed etc.
+    public func fetchObject(for key: String) throws -> Any {
+        let encryptedData = try fetch(for: key)
+        let secureAccessKey = try fetchSecureAccessKey()
+        let decryptedData = try encryptedData.decryptWithAES256(using: secureAccessKey)
+        let unarchivedData = NSKeyedUnarchiver.unarchiveObject(with: decryptedData)
+        if let unarchivedData = unarchivedData {
+            return unarchivedData
+        }
+        throw SecureStorageError.unarchivingFailed
+    }
+    
+    
+    /// Removes the object for the specified key. Fails silently if object could not be found for specified key and/or location.
+    ///
+    /// - Parameter key: Key for which object is to be deleted.
+    public func removeObject(for key: String) {
+        switch storageType {
+        case .defaults(let defaults), .sharedDefaults(let defaults):
+            defaults.removeObject(forKey: key)
+        case .file(let storageLocation):
+            try? FileManager.default.removeItem(at: storageLocation)
+        }
     }
     
     
@@ -93,6 +131,25 @@ import Foundation
                 try data.write(to: fileLocation, options: .completeFileProtection)
             } catch {
                 throw SecureStorageError.fileWritingFailed
+            }
+        }
+    }
+    
+    
+    func fetch(for key: String) throws -> Data {
+        switch storageType {
+        case .defaults(let defaults), .sharedDefaults(let defaults):
+            if let data = defaults.value(forKey: key) as? Data {
+                return data
+            }
+            throw SecureStorageError.objectNotFound
+        case .file(let storageLocation):
+            let fileLocation = storageLocation.appendingPathComponent(key)
+            do {
+                let data = try Data.init(contentsOf: fileLocation)
+                return data
+            } catch {
+                throw SecureStorageError.fileReadingFailed
             }
         }
     }

@@ -3,7 +3,7 @@
 //  StorageProvider
 //
 //  Created by Adarsh Kumar Rai on 22/01/18.
-//  Copyright © 2018 Philips. All rights reserved.
+//  Copyright © 2018 Personal. All rights reserved.
 //
 
 import Foundation
