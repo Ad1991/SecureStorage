@@ -30,7 +30,7 @@ extension Data {
         
         if UInt32(status) == UInt32(kCCSuccess) && numBytesEncrypted > 0 {
             var completeEncryptedData = Data()
-            completeEncryptedData.append(encryptedData)
+            completeEncryptedData.append(encryptedData.subdata(in: 0 ..< numBytesEncrypted))
             completeEncryptedData.append(iv)
             return completeEncryptedData
         } else {
@@ -43,7 +43,7 @@ extension Data {
         
         let iv = self.subdata(in: self.count - kCCBlockSizeAES128 ..< self.count)
         let dataToBeDecrypted = self.subdata(in: 0 ..< self.count - kCCBlockSizeAES128)
-        var decryptedData = Data(count: size_t(self.count - iv.count))
+        var decryptedData = Data(count: size_t(self.count))
         var numBytesDecrypted: size_t = 0
         let status = CCCrypt(CCOperation(kCCDecrypt),
                              CCAlgorithm(kCCAlgorithmAES),
@@ -52,12 +52,12 @@ extension Data {
                              kCCKeySizeAES256,
                              iv.pointer,
                              dataToBeDecrypted.pointer,
-                             self.count,
+                             dataToBeDecrypted.count,
                              decryptedData.mutablePointer(),
                              decryptedData.count,
                              &numBytesDecrypted)
-        if UInt32(status) == UInt32(kCCSuccess) && numBytesDecrypted > 0 {
-            return decryptedData
+        if Int32(status) == Int32(kCCSuccess) && numBytesDecrypted > 0 {
+            return decryptedData.subdata(in: 0 ..< numBytesDecrypted)
         } else {
             throw SecureStorageError.decryptionFailed
         }

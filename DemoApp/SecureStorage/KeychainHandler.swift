@@ -51,7 +51,7 @@ class KeychainHandler {
         var existingData: Data?
         do {
             existingData = try fetchObject(for: key)
-        } catch SecureStorageError.keychainReadFailed {
+        } catch let error as SecureStorageError where error == .keychainReadFailed || error == .keychainItemNotFound  {
             try? removeObject(for: key)
         }
         var status = errSecSuccess

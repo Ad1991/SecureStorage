@@ -15,12 +15,19 @@ class TestSecureStorageViewController: UIViewController {
     var appGroupEnabled = false
     var shouldUseFile = false
     
+    let keyForStorage = "some_key_to_store_text"
+    
+    @IBOutlet weak var textViewToStore: UITextView!
+    @IBOutlet weak var retrievedTextView: UITextView!
+    
     
     var secureStorage: SecureStorage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        title = "Secure Storage Test"
+        
         if !keychainSharingEnabled && !appGroupEnabled && !shouldUseFile {
             secureStorage = SecureStorage(keychainAccessGroup: nil)
         } else if keychainSharingEnabled && !appGroupEnabled && !shouldUseFile {
@@ -38,7 +45,16 @@ class TestSecureStorageViewController: UIViewController {
             //Let it crash if not able to initialize file storage
             secureStorage = try! SecureStorage(fileLocation: fileLocation, keychainAccessGroup: nil)
         }
+        
+        textViewToStore.layer.borderColor = UIColor.gray.cgColor
+        textViewToStore.layer.borderWidth = 0.5
+        textViewToStore.layer.cornerRadius = 5.0
+        
+        retrievedTextView.layer.borderColor = UIColor.gray.cgColor
+        retrievedTextView.layer.borderWidth = 0.5
+        retrievedTextView.layer.cornerRadius = 5.0
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -62,5 +78,24 @@ class TestSecureStorageViewController: UIViewController {
         }
         return filePath
     }()
+    
 
+    @IBAction func storeText(_ sender: UIButton) {
+        view.endEditing(true)
+        do {
+            try secureStorage.store(textViewToStore.text, for: keyForStorage)
+        } catch {
+            print(error)
+        }
+    }
+    
+    
+    @IBAction func retrieveText(_ sender: UIButton) {
+        do {
+            let text = try secureStorage.fetchObject(for: keyForStorage)
+            retrievedTextView.text = text as! String
+        } catch {
+            print(error)
+        }
+    }
 }

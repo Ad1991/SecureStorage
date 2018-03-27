@@ -121,13 +121,75 @@
                     <view key="view" contentMode="scaleToFill" id="iNC-H8-ua5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Some text you want to store" translatesAutoresizingMaskIntoConstraints="NO" id="y6G-c6-RH1">
+                                <rect key="frame" x="20" y="84" width="335" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="OAk-Dc-eYF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="GC2-8V-Myl" id="zWI-ys-9cD"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ED3-YH-n4x">
+                                <rect key="frame" x="137.5" y="194" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Acg-mP-8F6"/>
+                                    <constraint firstAttribute="height" constant="30" id="bZy-Z8-q6y"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="storeText:" destination="GC2-8V-Myl" eventType="touchUpInside" id="Jdf-qP-B7j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9O-Oo-4FZ">
+                                <rect key="frame" x="138" y="254" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Wa5-As-l1Z"/>
+                                    <constraint firstAttribute="height" constant="30" id="eEa-tB-ZhI"/>
+                                </constraints>
+                                <state key="normal" title="Retrieve"/>
+                                <connections>
+                                    <action selector="retrieveText:" destination="GC2-8V-Myl" eventType="touchUpInside" id="Kt8-eF-L9D"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlv-6m-FCo">
+                                <rect key="frame" x="20" y="314" width="335" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="b8k-ip-r0F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ED3-YH-n4x" firstAttribute="centerX" secondItem="6k0-rY-Yb2" secondAttribute="centerX" id="2Re-lX-Vhe"/>
+                            <constraint firstItem="6k0-rY-Yb2" firstAttribute="trailing" secondItem="y6G-c6-RH1" secondAttribute="trailing" constant="20" id="8dJ-NM-y76"/>
+                            <constraint firstItem="x9O-Oo-4FZ" firstAttribute="top" secondItem="ED3-YH-n4x" secondAttribute="bottom" constant="30" id="Dwl-ZU-cxG"/>
+                            <constraint firstItem="x9O-Oo-4FZ" firstAttribute="trailing" secondItem="ED3-YH-n4x" secondAttribute="trailing" id="Iwl-Wt-GHK"/>
+                            <constraint firstItem="ED3-YH-n4x" firstAttribute="top" secondItem="y6G-c6-RH1" secondAttribute="bottom" constant="30" id="TuH-aG-tN0"/>
+                            <constraint firstItem="x9O-Oo-4FZ" firstAttribute="leading" secondItem="ED3-YH-n4x" secondAttribute="leading" id="XJS-r9-gZO"/>
+                            <constraint firstItem="y6G-c6-RH1" firstAttribute="top" secondItem="6k0-rY-Yb2" secondAttribute="top" constant="20" id="bCn-ds-EVm"/>
+                            <constraint firstItem="jlv-6m-FCo" firstAttribute="trailing" secondItem="y6G-c6-RH1" secondAttribute="trailing" id="hzh-mw-Bot"/>
+                            <constraint firstItem="jlv-6m-FCo" firstAttribute="top" secondItem="x9O-Oo-4FZ" secondAttribute="bottom" constant="30" id="mL9-hW-VQg"/>
+                            <constraint firstItem="jlv-6m-FCo" firstAttribute="leading" secondItem="y6G-c6-RH1" secondAttribute="leading" id="u64-cU-tlQ"/>
+                            <constraint firstItem="y6G-c6-RH1" firstAttribute="leading" secondItem="6k0-rY-Yb2" secondAttribute="leading" constant="20" id="xx2-XN-VPr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6k0-rY-Yb2"/>
                     </view>
+                    <connections>
+                        <outlet property="retrievedTextView" destination="jlv-6m-FCo" id="jvt-7k-lhE"/>
+                        <outlet property="textViewToStore" destination="y6G-c6-RH1" id="goQ-xr-VkQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HSI-fJ-lvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1622" y="151"/>
+            <point key="canvasLocation" x="1621.5999999999999" y="150.67466266866569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D4S-eQ-DpG">
