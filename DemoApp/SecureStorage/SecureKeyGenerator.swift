@@ -22,7 +22,7 @@ class SecureKeyGenerator {
         let randomData = Data(randomString.utf8)
         var hash = Data(count: Int(CC_SHA256_DIGEST_LENGTH))
         
-        CCHmac(CCHmacAlgorithm(kCCHmacAlgSHA256), key.pointer, key.count, randomData.pointer, randomData.count, hash.mutablePointer())
+        CCHmac(CCHmacAlgorithm(kCCHmacAlgSHA256), key.pointer(), key.count, randomData.pointer(), randomData.count, hash.mutablePointer())
         return hash.subdata(in: kCCBlockSizeAES128/2 ..< (kCCBlockSizeAES128 + kCCBlockSizeAES128/2))
     }
     
@@ -41,7 +41,7 @@ class SecureKeyGenerator {
             rounds = 1000
         }
         var accessKey = Data(count: size_t(kCCKeySizeAES256))
-        let status = CCKeyDerivationPBKDF(CCPBKDFAlgorithm(kCCPBKDF2), randomData.integerPointer, randomData.count, hashSalt.pointer, hashSalt.count, CCPseudoRandomAlgorithm(kCCPRFHmacAlgSHA256), rounds, accessKey.mutablePointer(), accessKey.count)
+        let status = CCKeyDerivationPBKDF(CCPBKDFAlgorithm(kCCPBKDF2), randomData.pointer(), randomData.count, hashSalt.pointer(), hashSalt.count, CCPseudoRandomAlgorithm(kCCPRFHmacAlgSHA256), rounds, accessKey.mutablePointer(), accessKey.count)
         if status != errSecSuccess {
             throw SecureStorageError.keyGenerationFailed
         }
@@ -49,7 +49,7 @@ class SecureKeyGenerator {
     }
     
     
-    internal static var pbkdfSalt : Data {
+    static var pbkdfSalt: Data {
         var saltBytes: [UInt32] = []
         for _ in 0 ..< kCCKeySizeAES256 {
             saltBytes.append(arc4random())
@@ -62,17 +62,12 @@ class SecureKeyGenerator {
 
 extension Data {
     
-    mutating func mutablePointer() -> UnsafeMutablePointer<UInt8> {
+    mutating func mutablePointer<T>() -> UnsafeMutablePointer<T> {
         return self.withUnsafeMutableBytes { return $0 }
     }
     
     
-    var pointer: UnsafePointer<UInt8> {
-        return self.withUnsafeBytes { return $0 }
-    }
-    
-    
-    var integerPointer: UnsafePointer<Int8> {
-        return self.withUnsafeBytes { return $0 }
+    func pointer<T>() -> UnsafePointer<T> {
+        return self.withUnsafeBytes {return $0 }
     }
 }
