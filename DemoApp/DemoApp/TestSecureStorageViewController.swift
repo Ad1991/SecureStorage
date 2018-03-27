@@ -63,7 +63,7 @@ class TestSecureStorageViewController: UIViewController {
     
     
     func keychainAccessGroup(for bundle: Bundle) -> String {
-        let appId = bundle.object(forInfoDictionaryKey: "AppIDPrefix") as! String
+        let appId = bundle.object(forInfoDictionaryKey: "AppIdentifierPrefix") as! String
         return appId + "com.personal.SecureStorage.DemoApp"
     }
     
