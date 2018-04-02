@@ -73,7 +73,7 @@ import Foundation
         let archivedData = NSKeyedArchiver.archivedData(withRootObject: object)
         let secureAccessKey = try fetchSecureAccessKey()
         let encryptedData = try archivedData.encryptWithAES256(using: secureAccessKey, iv: SecureKeyGenerator.initializationVector(from: secureAccessKey))
-        try store(encryptedData, for: key)
+        try store(data: encryptedData, for: key)
     }
     
     
@@ -121,7 +121,7 @@ import Foundation
     }
     
     
-    func store(_ data: Data, for key: String) throws {
+    func store(data: Data, for key: String) throws {
         switch storageType {
         case .defaults(let defaults), .sharedDefaults(let defaults):
             defaults.set(data, forKey: key)
