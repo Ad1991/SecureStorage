@@ -11,7 +11,7 @@ import Foundation
 
 extension Data {
     
-    func encryptWithAES256(using key: Data, iv: Data) throws -> Data {
+    func encrypt(using key: Data, iv: Data) throws -> Data {
         
         var encryptedData = Data(count: size_t(kCCBlockSizeAES128 + self.count + kCCBlockSizeAES128))
         var numBytesEncrypted :size_t = 0
@@ -39,7 +39,7 @@ extension Data {
     }
     
     
-    func decryptWithAES256(using key: Data) throws -> Data {
+    func decrypt(using key: Data) throws -> Data {
         
         let iv = self.subdata(in: self.count - kCCBlockSizeAES128 ..< self.count)
         let dataToBeDecrypted = self.subdata(in: 0 ..< self.count - kCCBlockSizeAES128)

@@ -72,7 +72,7 @@ import Foundation
     public func store(_ object: Any, for key: String) throws {
         let archivedData = NSKeyedArchiver.archivedData(withRootObject: object)
         let secureAccessKey = try fetchSecureAccessKey()
-        let encryptedData = try archivedData.encryptWithAES256(using: secureAccessKey, iv: SecureKeyGenerator.initializationVector(from: secureAccessKey))
+        let encryptedData = try archivedData.encrypt(using: secureAccessKey, iv: SecureKeyGenerator.initializationVector(from: secureAccessKey))
         try store(data: encryptedData, for: key)
     }
     
@@ -85,7 +85,7 @@ import Foundation
     public func fetchObject(for key: String) throws -> Any {
         let encryptedData = try fetch(for: key)
         let secureAccessKey = try fetchSecureAccessKey()
-        let decryptedData = try encryptedData.decryptWithAES256(using: secureAccessKey)
+        let decryptedData = try encryptedData.decrypt(using: secureAccessKey)
         let unarchivedData = NSKeyedUnarchiver.unarchiveObject(with: decryptedData)
         if let unarchivedData = unarchivedData {
             return unarchivedData
