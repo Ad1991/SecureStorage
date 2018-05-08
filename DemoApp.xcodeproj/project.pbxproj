@@ -91,12 +91,12 @@
 		356C9EED2017205400D3428A /* SecureStorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecureStorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		356C9EF42017205400D3428A /* SecureStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageTests.swift; sourceTree = "<group>"; };
 		356C9EF62017205400D3428A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		356C9F032017207100D3428A /* iphoneos.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphoneos.modulemap; sourceTree = "<group>"; };
-		356C9F042017207100D3428A /* iphonesimulator.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphonesimulator.modulemap; sourceTree = "<group>"; };
 		356C9F052017207100D3428A /* DataEncryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEncryptor.swift; sourceTree = "<group>"; };
 		356C9F072019FB2D00D3428A /* SecureStorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageError.swift; sourceTree = "<group>"; };
 		356C9F092019FEC300D3428A /* SecureKeyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureKeyGenerator.swift; sourceTree = "<group>"; };
 		356C9F0B201C6A1700D3428A /* KeychainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHandler.swift; sourceTree = "<group>"; };
+		35949D5D20A0D5FC0057E2ED /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		35949D5F20A0D5FC0057E2ED /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		35C93EB0201C6CBE0029D837 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		35C93EB2201C86FC0029D837 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,9 +184,8 @@
 		356C9EE62017205400D3428A /* SecureStorage */ = {
 			isa = PBXGroup;
 			children = (
+				35949D5B20A0D5FC0057E2ED /* modulemaps */,
 				356C9F052017207100D3428A /* DataEncryptor.swift */,
-				356C9F032017207100D3428A /* iphoneos.modulemap */,
-				356C9F042017207100D3428A /* iphonesimulator.modulemap */,
 				356C9EE72017205400D3428A /* SecureStorage.h */,
 				356C9EE82017205400D3428A /* Info.plist */,
 				356C9F072019FB2D00D3428A /* SecureStorageError.swift */,
@@ -205,6 +204,31 @@
 				356C9EF62017205400D3428A /* Info.plist */,
 			);
 			path = SecureStorageTests;
+			sourceTree = "<group>";
+		};
+		35949D5B20A0D5FC0057E2ED /* modulemaps */ = {
+			isa = PBXGroup;
+			children = (
+				35949D5C20A0D5FC0057E2ED /* iphoneos */,
+				35949D5E20A0D5FC0057E2ED /* iphonesimulator */,
+			);
+			path = modulemaps;
+			sourceTree = "<group>";
+		};
+		35949D5C20A0D5FC0057E2ED /* iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				35949D5D20A0D5FC0057E2ED /* module.modulemap */,
+			);
+			path = iphoneos;
+			sourceTree = "<group>";
+		};
+		35949D5E20A0D5FC0057E2ED /* iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				35949D5F20A0D5FC0057E2ED /* module.modulemap */,
+			);
+			path = iphonesimulator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -666,8 +690,8 @@
 				INFOPLIST_FILE = SecureStorage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				"MODULEMAP_FILE[sdk=iphoneos*]" = "$(SRCROOT)/SecureStorage/iphoneos.modulemap";
-				"MODULEMAP_FILE[sdk=iphonesimulator*]" = "$(SRCROOT)/SecureStorage/iphonesimulator.modulemap";
+				"MODULEMAP_FILE[sdk=iphoneos*]" = "$(SRCROOT)/SecureStorage/modulemaps/iphoneos/module.modulemap";
+				"MODULEMAP_FILE[sdk=iphonesimulator*]" = "$(SRCROOT)/SecureStorage/modulemaps/iphonesimulator/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.SecureStorage;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -694,8 +718,8 @@
 				INFOPLIST_FILE = SecureStorage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				"MODULEMAP_FILE[sdk=iphoneos*]" = "$(SRCROOT)/SecureStorage/iphoneos.modulemap";
-				"MODULEMAP_FILE[sdk=iphonesimulator*]" = "$(SRCROOT)/SecureStorage/iphonesimulator.modulemap";
+				"MODULEMAP_FILE[sdk=iphoneos*]" = "$(SRCROOT)/SecureStorage/modulemaps/iphoneos/module.modulemap";
+				"MODULEMAP_FILE[sdk=iphonesimulator*]" = "$(SRCROOT)/SecureStorage/modulemaps/iphonesimulator/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.SecureStorage;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

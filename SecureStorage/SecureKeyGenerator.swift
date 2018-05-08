@@ -17,7 +17,7 @@ class SecureKeyGenerator {
         
         for _ in 0 ..< length {
             let randomIndex = arc4random_uniform(UInt32(allowedCharacters.count))
-            randomString.append(allowedCharacters[allowedCharacters.index(allowedCharacters.startIndex, offsetBy: String.IndexDistance(randomIndex))])
+            randomString.append(allowedCharacters[allowedCharacters.index(allowedCharacters.startIndex, offsetBy: randomIndex)])
         }
         let randomData = Data(randomString.utf8)
         var hash = Data(count: Int(CC_SHA256_DIGEST_LENGTH))
