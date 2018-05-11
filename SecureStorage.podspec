@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SecureStorage"
-  s.version      = "0.1.1"
+  s.version      = "1.0.0"
   s.summary      = "A simple utility to store objects securely on disk or in defaults"
   s.description  = "A simple library that allows applications to store Objective-C/Swift objects securely on disk or in user defaults."
   s.homepage     = "https://github.com/Ad1991/SecureStorage"
